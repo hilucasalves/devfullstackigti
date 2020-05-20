@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho Prático Módulo 01</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #F5F5F5;
+        }
+
+        .painel {
+            display: block;
+            width: 250px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        #painel-rgb {
+            margin-top: 10px;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Módulo 01</h1>
+    <h2>Trabalho Prático</h2>
+    <div class="painel">
+        <label>(R) Vermelho: </label>
+        <input type="range" min="0" max="255" value="0" id="rRed">
+        <input type="number" min="0" max="255" value="0" id="nRed" disabled>
+        <br>
+        <label>(G) Verde: </label>
+        <input type="range" min="0" max="255" value="0" id="rGreen">
+        <input type="number" min="0" max="255" value="0" id="nGreen" disabled>
+        <br>
+        <label>(B) Blue: </label>
+        <input type="range" min="0" max="255" value="0" id="rBlue">
+        <input type="number" min="0" max="255" value="0" id="nBlue" disabled>
+    </div>
+    <div id="painel-rgb"></div>
+    <script type="text/javascript">
+
+        var rRed = document.querySelector("#rRed");
+        var nRed = document.querySelector("#nRed");
+
+        var rGreen = document.querySelector("#rGreen");
+        var nGreen = document.querySelector("#nGreen");
+
+        var rBlue = document.querySelector("#rBlue");
+        var nBlue = document.querySelector("#nBlue");
+
+        var painelRGB = document.querySelector("#painel-rgb");
+
+        function defineCor() {
+            painelRGB.style.backgroundColor = "rgb(" + nRed.value + ", " + nGreen.value + ", " + nBlue.value + ")";
+        }
+
+        rRed.addEventListener("change", function (event) {
+            nRed.value = this.value;
+            defineCor();
+        });
+
+        rGreen.addEventListener("change", function (event) {
+            nGreen.value = this.value;
+            defineCor();
+        });
+
+        rBlue.addEventListener("change", function (event) {
+            nBlue.value = this.value;
+            defineCor();
+        });
+
+        window.addEventListener("load", function (event) {
+            defineCor();
+        });
+    </script>
+</body>
+
+</html>
