@@ -1,0 +1,40 @@
+body {
+    background-color: #F5F5F5;
+}
+
+a {
+    font-weight: bold;
+    font-size: 18px;
+    color: #8B4513;
+}
+
+#control-radio {
+    background-color: #FFE4B5;
+    width: 220px;
+    height: 129.6px;
+    position: absolute;
+    top: 142px;
+    left: 685px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #363636;
+}
+
+#inputFrequency {
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    border-width: 0;
+}
+
+#result {
+    background-color: #FFE4B5;
+    width: 220px;
+    height: 300px;
+    position: absolute;
+    top: 120px;
+    left: 460px;
+    border-radius: 10px;
+    border: 2px solid #363636;
+    text-align: center;
+}
