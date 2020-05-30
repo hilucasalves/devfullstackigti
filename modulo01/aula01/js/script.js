@@ -13,7 +13,7 @@ function start() {
 
 function handleInputRangeChange(event) {
 
-    inputFrequency.value = event.target.value;
+    inputFrequency.value = parseFloat(event.target.value).toFixed(1);
 
     showPodcastFromFrequency(event.target.value);
 }
@@ -53,21 +53,3 @@ function renderPodcast(podcast) {
     divPodcast.appendChild(description);
     divPodcast.appendChild(link);
 }
-
-window.addEventListener('keydown', function (event) {
-    if (event.key === 'ArrowLeft') {
-        var x = parseFloat(inputFrequency.value) - parseFloat(inputRange.step);
-        if (x >= inputRange.min) {
-            inputFrequency.value = x.toFixed(1);
-            inputRange.value = inputFrequency.value;
-            showPodcastFromFrequency(inputFrequency.value);
-        }
-    } else if (event.key === 'ArrowRight') {
-        var x = parseFloat(inputFrequency.value) + parseFloat(inputRange.step);
-        if (x <= inputRange.max) {
-            inputFrequency.value = x.toFixed(1);
-            inputRange.value = inputFrequency.value;
-            showPodcastFromFrequency(inputFrequency.value);
-        }
-    }
-});
